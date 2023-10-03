@@ -49,7 +49,7 @@ public class MyDrink {
             } while (!drinkFound && !outOfBound);
             drinkFound = outOfBound = false;
         }
-        System.out.println("Resultant Fraction : " + ((float) drinkMatchedCount/guest));
+        System.out.println("Resultant Fraction : " + ((float) drinkMatchedCount/100));
     }
 
     static void drinkShuffler(int guest) {
