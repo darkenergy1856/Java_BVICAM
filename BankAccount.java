@@ -55,7 +55,7 @@ public class BankAccount extends Account {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        LinkedList<Account> accounts = new LinkedList<>();
+        LinkedList<BankAccount> accounts = new LinkedList<>();
 
         while(true){
             System.out.println("Choose Operation To Perform : ");
@@ -64,6 +64,7 @@ public class BankAccount extends Account {
             System.out.println("3. Withdraw");
             System.out.println("4. Transfer");
             System.out.println("5. Deposit");
+            System.out.println("6. Exit Application");
 
 
             switch (input.nextInt()){
@@ -86,12 +87,37 @@ public class BankAccount extends Account {
                         exit(1);
                     break;
                 case 2:
+                    System.out.println("Enter Account Number : ");
+                    try{
+                    accounts.remove(input.nextInt()-1);}catch (Exception e){
+                        System.out.println("Account dose not  exist.");
+                    }
                     break;
                 case 3:
+                    System.out.println("Enter Account Number : ");
+                    int accountNumber = input.nextInt();
+                    System.out.println("Enter Withdraw Amount : ");
+                    int withdrawAmount = input.nextInt();
+                    accounts.get(accountNumber-1).withdraw(withdrawAmount);
                     break;
                 case 4:
+                    System.out.println("Enter Your Account Number : ");
+                    int firstAccountNumber = input.nextInt();
+                    System.out.println("Enter Account to Transfer Money : ");
+                    int secondAccountNumber = input.nextInt();
+                    System.out.println("Enter Withdraw Amount : ");
+                    int transferAmount = input.nextInt();
+                    accounts.get(firstAccountNumber-1).transfer(accounts.get(secondAccountNumber-1) , transferAmount);
                     break;
                 case 5:
+                    System.out.println("Enter your Account Number : ");
+                    int depositAccount = input.nextInt();
+                    System.out.println("Enter Deposit Amount : ");
+                    int depositAmount = input.nextInt();
+                    accounts.get(depositAccount-1).deposit(depositAmount);
+                    break;
+                case 6:
+                    exit(0);
                     break;
                 default:
                     System.out.println("Invalid Option Selected");

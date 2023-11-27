@@ -14,7 +14,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MyDrink {
-    static int[] drinkHolder = new int[100000];
+    static int[] drinkHolder = new int[100000000];
 
     public static void main(String[] args) {
 
@@ -61,5 +61,4 @@ public class MyDrink {
             drinkHolder[i] = temp;
         }
     }
-
 }

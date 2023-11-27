@@ -22,7 +22,7 @@ public class TestPalindromicWord {
             System.out.println(word + " is not a palindrome");
         }
     }
-    
+
     private static boolean isPalindrome(String word) {
         char[] temp = new char[50];
         for (int i = 0; i < word.length(); i++) {
